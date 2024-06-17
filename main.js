@@ -45,7 +45,9 @@ function produtoFunction(val1, val2) {
     remover_botao.innerText = 'Remover';
 
     let elemento = document.querySelector('.carrinho-info');
-    valorTotal += parseFloat(val2);
+    let precoNumerico = parseFloat(val2);
+    valorTotal += precoNumerico;
+
     // Estilos
     nova_roupa.style.gridColumn = 1;
     nova_roupa.style.fontSize = '30px';
@@ -103,6 +105,7 @@ function produtoFunction(val1, val2) {
         elementsToRemove.forEach(element => {
             element.remove();
         });
+        valorTotal -= precoNumerico;  // Subtrai o preço do item removido do valor total
         numero_de_roupas--;
     });
 
